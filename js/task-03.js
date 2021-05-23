@@ -16,4 +16,12 @@ const images = [
   },
 ];
 
-const
+const galleryRef = document.querySelector('#gallery');
+
+const createString = (({url, alt}) => `<li> <img src= '${url}' alt= '${alt}' width = "600" height = "400" style = "margin-left: 25px;"></li>`);
+const createGallery = images.reduce((acc, itemGallery) =>  acc + createString(itemGallery), '');
+
+galleryRef.setAttribute('style', 'display: flex; list-style: none; margin: 0; padding: 0;');
+galleryRef.insertAdjacentHTML('afterbegin', createGallery);
+
+
