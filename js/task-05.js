@@ -15,6 +15,5 @@ function onInputChange(event) {
     } else {
         refs.userName.textContent = event.currentTarget.value;
     };
-    console.log(refs.userName);
 };
 
