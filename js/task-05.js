@@ -7,13 +7,9 @@ const refs = {
     userName: document.querySelector('#name-output'),
 };
 
-refs.input.addEventListener('input', onInputChange);
-
-function onInputChange(event) {
-    if (event.currentTarget.value === '') {
-        refs.userName.textContent = 'незнакомец';
-    } else {
-        refs.userName.textContent = event.currentTarget.value;
-    };
+const onInputChange = (event) => {
+    refs.userName.textContent = event.currentTarget.value.trimStart() || 'незнакомец';    
 };
 
+
+refs.input.addEventListener('input', onInputChange);
